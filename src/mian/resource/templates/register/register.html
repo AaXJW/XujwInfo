@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+   <!-- <#include "../base/quote.html" > -->
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+  <!--   <link rel="icon" href="../../favicon.ico">
+ -->
+    <title>register for axInfo</title>
+
+    <!-- Bootstrap core CSS -->
+ 	 <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"></link>
+
+	<link href="../../static/bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet" th:href="@{/bootstrap/assets/css/ie10-viewport-bug-workaround.css}"></link>
+
+	<link href="../../static/bootstrap/bcss/signin.css" rel="stylesheet" th:href="@{/bootstrap/bcss/signin.css}"></link>
+
+	<script src="../../static/bootstrap/assets/js/ie-emulation-modes-warning.js" th:src="@{/bootstrap/assets/js/ie-emulation-modes-warning.js}"></script>
+ 
+ 	<script src="../../static/bootstrap/js/bootstrap.min.js" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+ 	
+ 	<script src="../../static/bootstrap/js/bootstrap.js" th:src="@{/bootstrap/js/bootstrap.js}"></script>
+ 	
+ 	<script src="../../static/bootstrap/bootstrapValidator/js/bootstrapValidator.js" th:src="@{/bootstrap/bootstrapValidator/js/bootstrapValidator.js}"></script>
+ 
+ 	<script src="../../static/bootstrap/bootstrapValidator/js/bootstrapValidator.min.js" th:src="@{/bootstrap/bootstrapValidator/js/bootstrapValidator.min.js}"></script>
+ 
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" method="post" action="/user/userSave">
+        <h2 class="form-signin-heading" style="color: #444444">Please register in</h2>
+        
+        
+        <label for="inputPassword" class="sr-only">userName</label>
+        <input type="text" id="userName" class="form-control" name = "userName" placeholder="userName"  required="true" th:value="${user?.userName}"
+        ></input>
+        
+       <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" name = "userEmail" placeholder="Email address" required="true" th:value="${user?.userEmail}"
+        ></input>
+        
+        <label for="inputPassword" class="sr-only">phone</label>
+        <input type="text" id="phone" class="form-control" placeholder="phone" name = "userPhone" required="true" th:value="${user?.userPhone}"></input>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "userPassWord" required="true"></input>
+        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me</input>
+          </label>
+          <label>
+            <a href="/login">login</a>
+          </label>
+        </div>
+       <!--  <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button> -->
+        
+        <div class="alert alert-danger" th:if="${registerError}">
+				<strong>当前邮箱，或手机号码已经注册，请重新尝试</strong>
+			</div>
+        
+        <button class="btn btn-lg btn-success btn-block" type="submit">register</button>
+      </form>
+
+    </div> <!-- /container -->
+
+ 
+    <script src="../../static/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script >
+    function bvValidateField(dom) {
+        var form = $(dom).parents("form")
+        var field = $(dom).attr('name');
+        $(form).bootstrapValidator();
+        var bv = $(form).data("bootstrapValidator")
+    }
+
+    </script>
+  </body>
+</html>

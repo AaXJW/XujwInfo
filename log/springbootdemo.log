@@ -1,0 +1,35 @@
+2019/06/08-14:56 [restartedMain] INFO  axInfo.App- Starting App on ybq00027-PC with PID 2268 (D:\java\Workspaces\axInfo\target\classes started by ybq00027 in D:\java\Workspaces\axInfo)
+2019/06/08-14:56 [restartedMain] INFO  axInfo.App- No active profile set, falling back to default profiles: default
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@418ec2a1: startup date [Sat Jun 08 14:56:55 CST 2019]; root of context hierarchy
+2019/06/08-14:56 [restartedMain] WARN  org.springframework.context.annotation.ConfigurationClassPostProcessor- Cannot enhance @Configuration bean definition 'myBatisMapperScannerConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat initialized with port(s): 8088 (http)
+2019/06/08-14:56 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/06/08-14:56 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/8.5.23
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 254 ms
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Mapping servlet: 'dispatcherServlet' to [/]
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2019/06/08-14:56 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2019/06/08-14:56 [restartedMain] INFO  com.gitee.sunchenbin.mybatis.actable.manager.handler.StartUpHandlerImpl- databaseType=mysql，开始执行mysql的处理方法
+2019/06/08-14:56 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-5} inited
+2019/06/08-14:56 [restartedMain] INFO  com.gitee.sunchenbin.mybatis.actable.manager.system.SysMysqlCreateTableManagerImpl- 配置mybatis.table.auto=none，不需要做任何事情
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@418ec2a1: startup date [Sat Jun 08 14:56:55 CST 2019]; root of context hierarchy
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/index]}" onto public java.lang.String axInfo.info.controller.UserController.getInfo(org.springframework.ui.Model)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/test]}" onto public java.lang.String axInfo.info.controller.UserController.getTest(org.springframework.ui.Model)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/login]}" onto public java.lang.String axInfo.info.controller.UserController.getLogin(org.springframework.ui.Model)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/register]}" onto public java.lang.String axInfo.info.controller.UserController.getRegister(org.springframework.ui.Model)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/user/userSave]}" onto public java.lang.String axInfo.info.controller.UserController.getUserSave(axInfo.info.entity.User)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Bean with name 'dataSource' has been autodetected for JMX exposure
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019/06/08-14:56 [restartedMain] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer- Tomcat started on port(s): 8088 (http)
+2019/06/08-14:56 [restartedMain] INFO  axInfo.App- Started App in 3.03 seconds (JVM running for 150.423)
