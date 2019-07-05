@@ -169,6 +169,7 @@
     <!-- 4.1 开发环境:打印控制台-->
     <springProfile name="dev">
         <logger name="com.sdcm.pmp" level="DEBUG_FILE"/>
+        <logger name="axInfo.info.mapper" level="DEBUG_FILE"/>
     </springProfile>
 	
     <root level="info">

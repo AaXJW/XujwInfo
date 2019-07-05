@@ -1,6 +1,8 @@
 package axInfo.info.controller;
 
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +23,8 @@ import com.jiufengxinxi.core.entity.JsonResult;
 import axInfo.info.base.utils.AppUtil;
 import axInfo.info.base.utils.MD5Utils;
 import axInfo.info.entity.User;
+import axInfo.info.entity.UserHistory;
+import axInfo.info.mapper.UserHistosyMapper;
 import axInfo.info.mapper.UserMapper;
 
 @Controller
@@ -28,6 +35,10 @@ public class UserController {
 	@Autowired
 	UserMapper UserMapper;
 
+	@Autowired
+	UserHistosyMapper userHistosyMapper;
+	
+	
 	/**
 	 * 登录页面
 	 * 
@@ -58,7 +69,9 @@ public class UserController {
 
 		return "/register/register";
 	}
-
+	
+	
+	@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout=36000,rollbackFor=Exception.class)
 	@RequestMapping(value = "/user/userSave")
 	public Object getUserSave(User user, HttpServletRequest request,Model model) {
 		user.setUserPassWord(MD5Utils.getMd5(user.getUserPassWord()));
@@ -99,6 +112,31 @@ public class UserController {
 			return "/login/login";  
 		} else {
 			request.getSession().setAttribute("user", user);
+			try{
+				userHistosyMapper.save(loginuser.getId(), new Date(), new Date());
+			}catch (Exception e) {
+				// TODO: handle exception
+				logger.info("增加登录日志失败");
+				logger.error("登录增加记录失败");
+				e.printStackTrace();
+			}
+			List<User> u = UserMapper.list();
+			for(User uu:u){
+				System.out.println(uu.getUserName());
+				List<UserHistory> uh = uu.getUserHistory();
+				for(UserHistory userH:uh){
+					System.out.println(userH.getId());
+				}
+				
+			}
+			
+			System.out.println("多对一关系");
+			List<UserHistory> hi = userHistosyMapper.list();
+			for (UserHistory us:hi){
+				System.out.println(us.getUser().getUserName());
+				
+			}
+			
 		}
 		return "/index";
 	}

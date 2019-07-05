@@ -1,5 +1,7 @@
 package axInfo.info.entity;
 
+import java.util.List;
+
 import com.gitee.sunchenbin.mybatis.actable.annotation.Column;
 import com.gitee.sunchenbin.mybatis.actable.annotation.Table;
 import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
@@ -17,10 +19,10 @@ public class User extends BaseLongEntity{
 	@Column(name="userPassWord",type=MySqlTypeConstant.VARCHAR,length=64)
 	private String userPassWord;
 	
-	@Column(name="userEmail",type=MySqlTypeConstant.VARCHAR,length=20)
+	@Column(name="userEmail",type=MySqlTypeConstant.VARCHAR,length=20,isUnique=true)
 	private String userEmail;
 	
-	@Column(name="userPhone",type=MySqlTypeConstant.VARCHAR,length=20)
+	@Column(name="userPhone",type=MySqlTypeConstant.VARCHAR,length=20,isUnique=true)
 	private String userPhone;
 	
 	@Column(name="userState",type=MySqlTypeConstant.INT,length=20)
@@ -28,6 +30,10 @@ public class User extends BaseLongEntity{
 	
 	@Column(name="userJurisdiction",type=MySqlTypeConstant.INT,length=20)
 	private int userJurisdiction;
+	
+	
+	//一对多
+	List<UserHistory> userHistory;
 	
 	public String getUserName() {
 		return userName;
@@ -75,6 +81,16 @@ public class User extends BaseLongEntity{
 
 	public void setUserJurisdiction(int userJurisdiction) {
 		this.userJurisdiction = userJurisdiction;
+	}
+
+	
+	
+	public List<UserHistory> getUserHistory() {
+		return userHistory;
+	}
+
+	public void setUserHistory(List<UserHistory> userHistory) {
+		this.userHistory = userHistory;
 	}
 
 	@Override

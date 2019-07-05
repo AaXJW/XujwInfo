@@ -46,7 +46,7 @@ public class BaseLongEntity {
 
 
 	public void setModTime(Date modTime) {
-		this.modTime = modTime;
+		this.modTime = new Date();
 	}
 	
 	
