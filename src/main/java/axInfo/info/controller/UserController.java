@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jiufengxinxi.core.entity.JsonResult;
 
-import axInfo.info.base.utils.AppUtil;
 import axInfo.info.base.utils.MD5Utils;
 import axInfo.info.entity.User;
 import axInfo.info.entity.UserHistory;

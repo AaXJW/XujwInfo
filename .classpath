@@ -23,6 +23,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/byt-mweb/src/main/webapp/WEB-INF/lib/quick-utils-1.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
