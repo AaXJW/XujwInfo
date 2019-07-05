@@ -3,7 +3,6 @@ package axInfo.info.controller;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,9 +15,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.jiufengxinxi.core.entity.JsonResult;
 
 import axInfo.info.base.utils.MD5Utils;
 import axInfo.info.entity.User;
